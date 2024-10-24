@@ -10,9 +10,9 @@ interface HeadPageProps {
 }
 
 export default function HeadPage({ pageTitle, meta }: HeadPageProps) {
-  const {
-    description = "Temukan dan beli produk terbaik dengan mudah dan cepat. Nikmati pengalaman belanja online yang praktis dengan katalog lengkap dan detail produk yang informatif.",
-  } = meta
+  const description =
+    meta?.description ||
+    "Temukan dan beli produk terbaik dengan mudah dan cepat. Nikmati pengalaman belanja online yang praktis dengan katalog lengkap dan detail produk yang informatif."
 
   return (
     <Head>
