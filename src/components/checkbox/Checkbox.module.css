@@ -1,0 +1,40 @@
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.checkboxLabel input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    outline: none;
+}
+
+.checkboxLabel input[type="checkbox"]:checked {
+    background-color: black;
+    border: 2px solid black;
+}
+
+.checkboxLabel input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+}
+
+.checkboxLabel input[type="checkbox"]:hover {
+    border-color: grey;
+}

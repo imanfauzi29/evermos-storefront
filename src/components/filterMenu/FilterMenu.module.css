@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 42px 24px;
+    border-radius: 12px;
+    border: 2px solid var(--bg-secondary);
+}
+
+.container h2 {
+    font-weight: 600;
+    font-size: 18px;
+}

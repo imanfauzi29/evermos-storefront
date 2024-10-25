@@ -1,5 +1,6 @@
 :root {
   --background: #ffffff;
+  --bg-secondary: #F6F6F6;
   --foreground: #171717;
   --primary: #59A0A8;
   --primary-hover: #488389;
@@ -39,6 +40,8 @@ button {
   outline: none;
   border: none;
   font-family: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
 a {
@@ -65,4 +68,21 @@ a {
   width: 2px;
   height: 100%;
   background: #CFD6DB;
+}
+
+.horizontal-divider {
+  height: 2px;
+  width: 100%;
+  background: #CFD6DB;
+}
+
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
 }

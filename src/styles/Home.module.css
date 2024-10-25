@@ -4,40 +4,6 @@
   gap: 24px;
 }
 
-.slider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 32px;
-  height: 30rem;
-}
-
-.bgImage {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.7);
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.contentSlider {
+.content {
   display: flex;
-  gap: 10px;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  padding-inline: 10rem;
-}
-
-.contentSlider div {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.contentSlider div h1 {
-  font-weight: 600;
 }
