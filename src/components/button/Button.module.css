@@ -1,0 +1,39 @@
+.button {
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.primary {
+    background: var(--primary);
+    border: var(--primary);
+
+}
+
+.primary:hover {
+    background: var(--primary-hover);
+}
+
+.primary:focus-visible {
+    outline: var(--primary);
+}
+
+.outline {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #000000;
+}
+
+.outline:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+    stroke: #ffffff;
+}
+
+.xs {
+    padding: .4rem 1rem;
+    font-size: 12px;
+}
+
+.md {
+    padding: .8rem 2rem;
+}

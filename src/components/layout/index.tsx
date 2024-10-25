@@ -1,6 +1,7 @@
 import React from "react"
 import Footer from "@/components/layout/footer"
 import HeadPage, { MetaData } from "@/components/layout/head"
+import Navbar from "@/components/layout/navbar"
 
 interface LayoutProps {
   pageTitle: string
@@ -15,9 +16,11 @@ export default function Layout({
   return (
     <>
       <HeadPage pageTitle={pageTitle} meta={meta} />
-      <main>{children}</main>
-
-      <Footer />
+      <div className="flex-col">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
     </>
   )
 }
