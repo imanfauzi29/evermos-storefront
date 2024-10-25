@@ -4,6 +4,7 @@ import Layout from "@/components/layout"
 import cn from "@/helpers/cn"
 import Slider from "@/components/slider"
 import FilterMenu from "@/components/filterMenu"
+import Card from "@/components/card"
 
 export default function Home() {
   return (
@@ -12,8 +13,16 @@ export default function Home() {
         <Slider />
 
         <div className={styles.content}>
-          <div style={{ width: "25%" }}>
+          <div style={{ flexBasis: "25%" }}>
             <FilterMenu />
+          </div>
+          <div style={{ flex: "1 1 0%" }}>
+            <div></div>
+            <div className={styles.contentList}>
+              <Card />
+              <Card />
+              <Card />
+            </div>
           </div>
         </div>
       </div>

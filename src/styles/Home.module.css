@@ -6,4 +6,12 @@
 
 .content {
   display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.contentList {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
 }
