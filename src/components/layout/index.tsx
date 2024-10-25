@@ -16,9 +16,12 @@ export default function Layout({
   return (
     <>
       <HeadPage pageTitle={pageTitle} meta={meta} />
-      <div className="flex-col">
+      <div className="flex-col" style={{ gap: "24px", height: "100vh" }}>
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <div style={{ marginBottom: "30px" }}>breadcrumb here</div>
+          {children}
+        </main>
         <Footer />
       </div>
     </>
