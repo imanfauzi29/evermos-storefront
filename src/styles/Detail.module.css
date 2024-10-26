@@ -15,3 +15,9 @@
 .description p[data-classname="description-text"] {
     color: var(--foreground)
 }
+
+@media (max-width: 576px) {
+    .container > div {
+        flex-direction: column;
+    }
+}

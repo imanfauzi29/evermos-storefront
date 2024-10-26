@@ -10,6 +10,7 @@ import { getCatalogs } from "@/services/baseService"
 import Link from "next/link"
 import { debounce } from "@/helpers/debounce"
 import Slider from "@/components/slider"
+import Button from "@/components/button"
 
 type PageProps = {
   data: Catalog[]
@@ -19,6 +20,7 @@ export default function Home({ data, slider_image }: PageProps) {
   const [catalogs, setCatalogs] = useState<Catalog[]>(data)
   const [q, setQ] = useState("")
   const [category, setCategory] = useState<string[]>([])
+  const [showModal, setShowModal] = useState(false)
 
   const filterMenuCatalogs = useMemo(() => {
     if (!catalogs.length) return []
@@ -31,6 +33,7 @@ export default function Home({ data, slider_image }: PageProps) {
   const getCatalog = async (query: string) => {
     const res = await getCatalogs(query)
     setCatalogs(res)
+    setShowModal(false)
   }
 
   const handleSearchChange = async (
@@ -44,7 +47,6 @@ export default function Home({ data, slider_image }: PageProps) {
   }
 
   const handleFilterChange = async (cat: string[]) => {
-    console.log(cat)
     if (cat.length === 0) {
       await getCatalog("")
       setCategory([])
@@ -63,7 +65,7 @@ export default function Home({ data, slider_image }: PageProps) {
         <Slider slider={slider_image} />
 
         <div className={styles.content}>
-          <div style={{ flexBasis: "25%" }}>
+          <div className={styles.filterMenu}>
             <FilterMenu
               categories={filterMenuCatalogs}
               onChange={handleFilterChange}
@@ -96,39 +98,64 @@ export default function Home({ data, slider_image }: PageProps) {
                   </div>
                 )}
               </div>
-              <input
-                type="text"
-                placeholder="Search..."
-                className={styles.input}
-                onChange={debounce(handleSearchChange, 500)}
-              />
+              <div className={styles.filterAction}>
+                <Button
+                  variant="outline"
+                  size="xs"
+                  onClick={() => setShowModal(true)}
+                >
+                  Filter
+                </Button>
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className={styles.input}
+                  onChange={debounce(handleSearchChange, 500)}
+                />
+              </div>
             </div>
             <div className={styles.contentList}>
-              {catalogs.map(
-                (
-                  {
-                    id,
-                    price,
-                    actual_price,
-                    product_detail,
-                    discount,
-                    product_name,
-                  },
-                  i,
-                ) => (
-                  <Link key={i} href={`/${id}`}>
-                    <Card
-                      price={price}
-                      actualPrice={actual_price}
-                      image={product_detail.image_url[0]}
-                      title={product_name}
-                      discount={discount}
-                    />
-                  </Link>
-                ),
+              {catalogs.length > 0 ? (
+                catalogs.map(
+                  (
+                    {
+                      id,
+                      price,
+                      actual_price,
+                      product_detail,
+                      discount,
+                      product_name,
+                    },
+                    i,
+                  ) => (
+                    <Link key={i} href={`/${id}`}>
+                      <Card
+                        price={price}
+                        actualPrice={actual_price}
+                        image={product_detail.image_url[0]}
+                        title={product_name}
+                        discount={discount}
+                      />
+                    </Link>
+                  ),
+                )
+              ) : (
+                <div className="flex justify-center">No result found!</div>
               )}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={cn(styles.modal, showModal ? styles.show : "")}>
+        <div>
+          <button type="button" onClick={() => setShowModal(false)}>
+            &times;
+          </button>
+          <FilterMenu
+            categories={filterMenuCatalogs}
+            onChange={handleFilterChange}
+          />
         </div>
       </div>
     </>

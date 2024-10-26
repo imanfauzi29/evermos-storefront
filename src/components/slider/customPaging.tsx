@@ -37,13 +37,13 @@ export default function SliderCustomPaging({
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
         {images.map((baseUrl, index) => (
-          <div key={index}>
+          <div className={styles.sliderItem} key={index}>
             <Image
               src={baseUrl}
               alt={baseUrl}
-              width={500}
-              height={300}
-              style={{ objectFit: "contain" }}
+              width={0}
+              height={0}
+              sizes="100vw"
             />
           </div>
         ))}
