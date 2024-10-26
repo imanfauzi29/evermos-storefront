@@ -18,7 +18,7 @@ export default function Layout({
       <div className={cn("flex-col", styles.wrapper)}>
         <Navbar />
         <main className="flex-1">
-          <div style={{ marginBottom: "30px" }}>breadcrumb here</div>
+          {/*<div style={{ marginBottom: "30px" }}>breadcrumb here</div>*/}
           {children}
         </main>
         <Footer />
