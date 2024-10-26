@@ -1,0 +1,9 @@
+.discount {
+    margin-left: 10px;
+    padding-inline: 6px;
+    padding-block: 2px;
+    background: rgba(243, 0, 0, 0.06);
+    color: red;
+    font-size: 12px;
+    border-radius: 6px;
+}

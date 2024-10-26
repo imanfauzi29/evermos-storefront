@@ -6,6 +6,7 @@
 .primary {
     background: var(--primary);
     border: var(--primary);
+    color: #ffffff;
 
 }
 

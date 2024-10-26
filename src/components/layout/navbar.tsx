@@ -18,9 +18,10 @@ export default function Navbar() {
           my cart
           <Icon name={"handbag"} size="12px" />
         </Button>
-        <div style={{ paddingBlock: "8px", height: "100%" }}>
-          <div className={"vertical-divider"} />
-        </div>
+        <div
+          className={"vertical-divider"}
+          style={{ height: "60%", margin: "auto 0" }}
+        />
         <div className={Style.profileImage}>
           <img src="./img/profile-image.png" alt="profile" />
         </div>

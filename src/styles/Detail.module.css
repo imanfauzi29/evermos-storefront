@@ -1,0 +1,17 @@
+.container {
+    max-width: 1200px;
+    margin-inline: auto
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.description {
+    display: block;
+}
+
+.description p[data-classname="description-text"] {
+    color: var(--foreground)
+}

@@ -36,3 +36,5 @@
 .contentSlider div h1 {
     font-weight: 600;
 }
+
+.sliderContainer { min-height: 0; min-width: 0; padding: 20px; width: 500px }

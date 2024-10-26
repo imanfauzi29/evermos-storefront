@@ -1,7 +1,9 @@
 import React from "react"
 import Footer from "@/components/layout/footer"
-import HeadPage, { MetaData } from "@/components/layout/head"
+import { MetaData } from "@/components/layout/head"
 import Navbar from "@/components/layout/navbar"
+import cn from "@/helpers/cn"
+import styles from "./Layout.module.css"
 
 interface LayoutProps {
   pageTitle: string
@@ -15,8 +17,8 @@ export default function Layout({
 }: React.PropsWithChildren<LayoutProps>) {
   return (
     <>
-      <HeadPage pageTitle={pageTitle} meta={meta} />
-      <div className="flex-col" style={{ gap: "24px", height: "100vh" }}>
+      {/*<HeadPage pageTitle={pageTitle} meta={meta} />*/}
+      <div className={cn("flex-col", styles.wrapper)}>
         <Navbar />
         <main className="flex-1">
           <div style={{ marginBottom: "30px" }}>breadcrumb here</div>

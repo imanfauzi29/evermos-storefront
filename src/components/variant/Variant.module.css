@@ -1,0 +1,23 @@
+
+.variantContainer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.variantContainer button[data-classname="variant-option"] {
+    border-radius: 8px;
+    padding: 6px 10px;
+    border: 1px solid;
+}
+
+.variantContainer button[data-classname="variant-option"]:hover {
+    background: var(--foreground);
+    color: var(--background);
+}
+
+.variantContainer button[data-selected="true"] {
+    background: var(--foreground);
+    color: var(--background);
+}

@@ -1,0 +1,13 @@
+.ratingContainer {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    position: relative;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.star {
+    color: #FFBB1C;
+    font-size: 18px;
+}
