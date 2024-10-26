@@ -5,9 +5,12 @@ export default function Slider() {
   return (
     <div className={styles.slider}>
       <Image
-        src="./img/slider1.webp"
+        src="/img/slider1.webp"
         alt="bg-image"
         className={styles.bgImage}
+        layout="fill"
+        objectFit="cover"
+        priority
       />
 
       <div className={styles.contentSlider}>
@@ -20,7 +23,22 @@ export default function Slider() {
           </p>
           <p>No tricks, just treats!</p>
         </div>
-        <Image src="./img/pumpkin-image.png" alt="pumpkin" />
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            scale: ".8",
+          }}
+        >
+          <Image
+            src="/img/pumpkin-image.png"
+            alt="pumpkin"
+            layout="fill"
+            objectFit="contain"
+            priority
+          />
+        </div>
       </div>
     </div>
   )

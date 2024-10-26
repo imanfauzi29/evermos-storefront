@@ -28,7 +28,7 @@ export default function Navbar() {
         />
         <div className={Style.profileImage}>
           <Image
-            src="./img/profile-image.png"
+            src="/img/profile-image.png"
             alt="profile"
             width={200}
             height={200}

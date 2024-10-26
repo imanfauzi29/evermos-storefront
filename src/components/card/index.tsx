@@ -19,7 +19,13 @@ export default function Card({
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image src={image} alt={title} className={styles.imageClass} />
+        <Image
+          src={image}
+          alt={title}
+          className={styles.imageClass}
+          width={500}
+          height={500}
+        />
       </div>
       <div className={styles.listText}>
         <h3>{title}</h3>

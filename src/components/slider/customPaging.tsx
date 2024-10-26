@@ -19,9 +19,8 @@ export default function SliderCustomPaging({
           <Image
             src={images[i]}
             alt={`images-${i}`}
-            width={0}
-            height={0}
-            className="w-full"
+            layout="fill"
+            objectFit="contain"
           />
         </a>
       )
@@ -39,7 +38,13 @@ export default function SliderCustomPaging({
       <Slider {...settings}>
         {images.map((baseUrl, index) => (
           <div key={index}>
-            <Image src={baseUrl} alt={baseUrl} />
+            <Image
+              src={baseUrl}
+              alt={baseUrl}
+              width={500}
+              height={300}
+              style={{ objectFit: "contain" }}
+            />
           </div>
         ))}
       </Slider>

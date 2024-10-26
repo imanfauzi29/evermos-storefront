@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
         hostname: "m.media-amazon.com",
         pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.mos.cms.futurecdn.net",
+      },
     ],
   },
 }
