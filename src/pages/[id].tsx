@@ -1,4 +1,3 @@
-import { useRouter } from "next/router"
 import { ReactElement } from "react"
 import Layout from "@/components/layout"
 import SliderCustomPaging from "@/components/slider/customPaging"
@@ -8,6 +7,9 @@ import Rating from "@/components/rating"
 import Price from "@/components/price"
 import Variant from "@/components/variant"
 import ProductDetail from "@/components/productDetail"
+import { Catalog } from "@/services/types"
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
+import { getCatalogById } from "@/services/baseService"
 
 const details = {
   id: 1,
@@ -47,23 +49,34 @@ const details = {
   },
 }
 
-export default function DetailCatalog() {
-  const router = useRouter()
+type PageProps = {
+  data: Catalog
+}
+
+export default function DetailCatalog({ data }: PageProps) {
+  const {
+    rating,
+    product_detail,
+    product_name,
+    price,
+    actual_price,
+    discount,
+  } = data
   return (
     <section className={styles.container}>
       <div className="flex justify-center">
         {/*image */}
         <div>
-          <SliderCustomPaging images={details.product_detail.image_url} />
+          <SliderCustomPaging images={product_detail.image_url} />
         </div>
         {/*content*/}
         <div className="flex-col gap-normal">
           <div>
-            <h1 className={styles.title}>{details.product_name}</h1>
+            <h1 className={styles.title}>{product_name}</h1>
 
             <Rating
-              averageRating={details.rating.average_rating}
-              totalReviews={details.rating.total_reviews}
+              averageRating={rating.average_rating}
+              totalReviews={rating.total_reviews}
             />
           </div>
 
@@ -74,12 +87,12 @@ export default function DetailCatalog() {
 
           <div>
             <Price
-              price={details.price}
-              actualPrice={details.actual_price}
-              discount={details.discount}
+              price={price}
+              actualPrice={actual_price}
+              discount={discount}
             />
 
-            <Variant variants={details.product_detail.variants} />
+            <Variant variants={product_detail.variants} />
           </div>
 
           <div
@@ -88,7 +101,7 @@ export default function DetailCatalog() {
           />
 
           <div>
-            <ProductDetail specs={details.product_detail.specs} />
+            <ProductDetail specs={product_detail.specs} />
 
             <div
               className={styles.description}
@@ -101,7 +114,7 @@ export default function DetailCatalog() {
                 About this product
               </p>
               <p data-classname="description-text">
-                {details.product_detail.description}
+                {product_detail.description}
               </p>
             </div>
           </div>
@@ -121,4 +134,17 @@ DetailCatalog.getLayout = function getLayout(page: ReactElement) {
       <>{page}</>
     </Layout>
   )
+}
+
+export async function getServerSideProps(
+  context: GetServerSidePropsContext,
+): Promise<GetServerSidePropsResult<PageProps>> {
+  const { id } = context.params as { id: string }
+  const details = await getCatalogById(Number(id))
+
+  return {
+    props: {
+      data: details,
+    },
+  }
 }
