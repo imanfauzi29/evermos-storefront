@@ -1,7 +1,6 @@
 import Collapsible from "@/components/collapsible"
 import styles from "./FilterMenu.module.css"
 import Checkbox from "@/components/checkbox"
-import { useState } from "react"
 import Button from "@/components/button"
 
 interface FilterMenuProps {
@@ -9,14 +8,14 @@ interface FilterMenuProps {
 }
 
 export default function FilterMenu({ categories }: FilterMenuProps) {
-  const [sliderValues, setSliderValues] = useState<number[]>([])
-
-  const formatRupiah = (percent: number) => {
-    const round = Math.round((percent / 100) * 5000000)
-
-    if (isNaN(round)) return "Rp 0"
-    return `Rp ${round.toLocaleString("id-ID")}`
-  }
+  // const [sliderValues, setSliderValues] = useState<number[]>([])
+  //
+  // const formatRupiah = (percent: number) => {
+  //   const round = Math.round((percent / 100) * 5000000)
+  //
+  //   if (isNaN(round)) return "Rp 0"
+  //   return `Rp ${round.toLocaleString("id-ID")}`
+  // }
 
   return (
     <div className={styles.container}>

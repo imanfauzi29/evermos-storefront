@@ -4,6 +4,7 @@ import Button from "@/components/button"
 import Style from "./Layout.module.css"
 import Icon from "@/components/icon"
 import Link from "next/link"
+import Image from "next/image"
 
 const jetbrainMono = JetBrains_Mono({
   variable: "--font-jetbrain",
@@ -26,7 +27,12 @@ export default function Navbar() {
           style={{ height: "60%", margin: "auto 0" }}
         />
         <div className={Style.profileImage}>
-          <img src="./img/profile-image.png" alt="profile" />
+          <Image
+            src="./img/profile-image.png"
+            alt="profile"
+            width={200}
+            height={200}
+          />
         </div>
       </div>
     </nav>

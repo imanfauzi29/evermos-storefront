@@ -19,7 +19,7 @@ const cn = (...args: unknown[]): string => {
   return newArgs.filter((v) => v).join(" ")
 }
 
-const formatObjectToArray = (args: Record<string, boolean>): String[] => {
+const formatObjectToArray = (args: Record<string, boolean>): string[] => {
   let arr = [] as string[]
 
   Object.keys(args).forEach((key) => {

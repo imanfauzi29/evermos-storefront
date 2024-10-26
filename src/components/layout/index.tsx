@@ -12,12 +12,9 @@ interface LayoutProps {
 
 export default function Layout({
   children,
-  pageTitle,
-  meta,
 }: React.PropsWithChildren<LayoutProps>) {
   return (
     <>
-      {/*<HeadPage pageTitle={pageTitle} meta={meta} />*/}
       <div className={cn("flex-col", styles.wrapper)}>
         <Navbar />
         <main className="flex-1">

@@ -1,5 +1,6 @@
 import styles from "./Card.module.css"
 import { formatNumberToRupiah } from "@/helpers/formatNumber"
+import Image from "next/image"
 
 interface CardProps {
   image: string
@@ -18,7 +19,7 @@ export default function Card({
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <img src={image} className={styles.imageClass} alt={title} />
+        <Image src={image} alt={title} className={styles.imageClass} />
       </div>
       <div className={styles.listText}>
         <h3>{title}</h3>

@@ -3,6 +3,7 @@ import styles from "./Slider.module.css"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Image from "next/image"
 
 interface SliderCustomPagingProps {
   images: string[]
@@ -15,7 +16,13 @@ export default function SliderCustomPaging({
     customPaging: function (i: number) {
       return (
         <a>
-          <img src={images[i]} style={{ maxWidth: "100%" }} />
+          <Image
+            src={images[i]}
+            alt={`images-${i}`}
+            width={0}
+            height={0}
+            className="w-full"
+          />
         </a>
       )
     },
@@ -32,7 +39,7 @@ export default function SliderCustomPaging({
       <Slider {...settings}>
         {images.map((baseUrl, index) => (
           <div key={index}>
-            <img src={baseUrl} className="w-full" />
+            <Image src={baseUrl} alt={baseUrl} />
           </div>
         ))}
       </Slider>

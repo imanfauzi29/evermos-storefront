@@ -1,9 +1,14 @@
 import styles from "./Slider.module.css"
+import Image from "next/image"
 
 export default function Slider() {
   return (
     <div className={styles.slider}>
-      <img src="./img/slider1.webp" alt="bg-image" className={styles.bgImage} />
+      <Image
+        src="./img/slider1.webp"
+        alt="bg-image"
+        className={styles.bgImage}
+      />
 
       <div className={styles.contentSlider}>
         <div>
@@ -15,7 +20,7 @@ export default function Slider() {
           </p>
           <p>No tricks, just treats!</p>
         </div>
-        <img src="./img/pumpkin-image.png" alt="pumpkin" />
+        <Image src="./img/pumpkin-image.png" alt="pumpkin" />
       </div>
     </div>
   )

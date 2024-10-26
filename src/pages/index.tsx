@@ -14,7 +14,7 @@ type PageProps = {
   data: Catalog[]
 }
 export default function Home({ data }: PageProps) {
-  const [catalogs, setCatalogs] = useState<Catalog[]>(data)
+  const [catalogs] = useState<Catalog[]>(data)
 
   const filterMenuCatalogs = useMemo(() => {
     if (!catalogs.length) return []
