@@ -15,3 +15,24 @@
   gap: 60px 16px;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.input {
+  background: transparent;
+  border: 1px solid var(--bg-tertiary);
+  padding: .6rem 1.2rem;
+  color: var(--foreground);
+  border-radius: 9999px;
+}
+
+.filterContainer {
+  margin-block: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  padding: 4px 1rem;
+  border-radius: 9999px;
+  font-size: 14px;
+  border: 1px solid var(--bg-tertiary);
+}
