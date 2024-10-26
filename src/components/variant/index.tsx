@@ -1,6 +1,6 @@
 import styles from "./Variant.module.css"
 import { Variant } from "@/services/types"
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import cn from "@/helpers/cn"
 
 interface VariantProps {
@@ -9,9 +9,15 @@ interface VariantProps {
 export default function variant({ variants }: VariantProps) {
   const [indexSelected, setIndexSelected] = useState<null | number>(null)
 
+  const variantSelected = useMemo(() => {
+    if (indexSelected === null) return null
+
+    return variants[indexSelected].color
+  }, [indexSelected])
+
   return (
     <div className={styles.variantContainer}>
-      <p>variant: red</p>
+      <p className="text-smx">variant: {variantSelected}</p>
       <div className="flex flex-wrap gap-normal">
         {variants.map((variant, index) => (
           <button

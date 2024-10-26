@@ -3,6 +3,7 @@ import cn from "@/helpers/cn"
 import Button from "@/components/button"
 import Style from "./Layout.module.css"
 import Icon from "@/components/icon"
+import Link from "next/link"
 
 const jetbrainMono = JetBrains_Mono({
   variable: "--font-jetbrain",
@@ -12,7 +13,9 @@ const jetbrainMono = JetBrains_Mono({
 export default function Navbar() {
   return (
     <nav className={cn(Style.navContainer)}>
-      <h1 className={cn(jetbrainMono.className)}>FSTORE</h1>
+      <Link href="/">
+        <h1 className={cn(jetbrainMono.className)}>FSTORE</h1>
+      </Link>
       <div className={Style.profile}>
         <Button variant="outline" size="xs" className={Style.btnCart}>
           my cart
