@@ -4,7 +4,7 @@ import { Catalog } from "@/services/types"
 const base_url =
   "https://my-json-server.typicode.com/imanfauzi29/evermos-storefront"
 
-export const getCatalog = async (id: number): Promise<Catalog[]> => {
+export const getCatalogs = async (): Promise<Catalog[]> => {
   const response = await axios.get(`${base_url}/catalogs`)
   return response.data
 }

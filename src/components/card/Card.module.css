@@ -52,7 +52,7 @@
 }
 
 .imageClass {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     position: absolute;
     left: 0;

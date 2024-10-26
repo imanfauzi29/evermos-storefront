@@ -11,44 +11,6 @@ import { Catalog } from "@/services/types"
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
 import { getCatalogById } from "@/services/baseService"
 
-const details = {
-  id: 1,
-  product_name: "Sony PlayStation 5 DualSense Wireless Controller",
-  actual_price: 1000000,
-  price: 950000,
-  discount: 0.05,
-  total_sold: 4500,
-  rating: {
-    average_rating: 4.8,
-    total_reviews: 1800,
-  },
-  stocks: 150,
-  category: "gaming",
-  product_detail: {
-    description:
-      "DualSense Wireless Controller untuk PlayStation 5 dilengkapi dengan teknologi haptic feedback dan adaptive triggers yang memberikan pengalaman bermain yang lebih mendalam dan realistis. Kontroler ini kompatibel dengan PS5 dan beberapa game yang ada di PC. Desain ergonomisnya dirancang agar nyaman digunakan dalam waktu lama, dengan tombol yang mudah dijangkau. Dilengkapi dengan port USB-C untuk pengisian daya cepat dan jack headphone 3.5mm. Pengguna dapat menikmati permainan multiplayer atau single-player dengan respons yang lebih presisi.",
-    specs: {
-      brand: "Sony",
-      warranty_type: "Garansi Resmi",
-      condition: "Baru",
-    },
-    variants: [
-      {
-        color: "Putih",
-        stock: 100,
-      },
-      {
-        color: "Midnight Black",
-        stock: 50,
-      },
-    ],
-    image_url: [
-      "https://m.media-amazon.com/images/I/61DLYxmpZlL._SL1500_.jpg",
-      "https://m.media-amazon.com/images/I/61UZbAmP0kL._SL1500_.jpg",
-    ],
-  },
-}
-
 type PageProps = {
   data: Catalog
 }
